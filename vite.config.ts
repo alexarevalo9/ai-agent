@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig({
-  base: '/ai-agent/',
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/ai-agent/' : '/',
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
-});
+}));
