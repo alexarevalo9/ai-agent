@@ -44,8 +44,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload build folder
-          path: "./build"
+          # Upload client folder from build
+          path: "./build/client"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
