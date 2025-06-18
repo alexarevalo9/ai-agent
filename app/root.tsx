@@ -25,17 +25,55 @@ export const links: Route.LinksFunction = () => [
 
 export function HydrateFallback() {
   return (
-    <div className='min-h-screen bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 flex items-center justify-center'>
-      <div className='text-center'>
-        <div className='bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20'>
-          <div className='flex flex-col items-center space-y-4'>
-            <div className='animate-spin rounded-full h-16 w-16 border-b-2 border-white'></div>
-            <h2 className='text-2xl font-bold text-white'>
-              Loading Weather Assistant
-            </h2>
-            <p className='text-white/80'>
-              Preparing your weather experience...
+    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6'>
+      <div className='max-w-sm w-full space-y-8 text-center'>
+        {/* Logo/Brand Area */}
+        <div className='space-y-6'>
+          <div className='mx-auto w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg'>
+            <svg
+              className='w-10 h-10 text-white'
+              fill='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path d='M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z' />
+            </svg>
+          </div>
+          <div className='space-y-2'>
+            <h1 className='text-4xl font-bold text-slate-900'>
+              AI Financial Coach
+            </h1>
+            <p className='text-slate-600'>
+              Your personalized path to financial wellness
             </p>
+          </div>
+        </div>
+
+        {/* Loading Animation */}
+        <div className='space-y-8'>
+          {/* Simple Spinner */}
+          <div className='flex justify-center'>
+            <div className='w-8 h-8 border-3 border-blue-600 border-t-transparent rounded-full animate-spin'></div>
+          </div>
+
+          {/* Loading Message */}
+          <div className='space-y-4'>
+            <p className='text-sm text-slate-600'>
+              Loading your financial dashboard...
+            </p>
+          </div>
+
+          {/* Simplified Preview Cards */}
+          <div className='grid grid-cols-2 gap-4 opacity-50'>
+            <div className='bg-white rounded-xl p-4 shadow-sm border'>
+              <div className='h-3 bg-slate-200 rounded mb-3 animate-pulse'></div>
+              <div className='h-7 bg-slate-300 rounded mb-2 animate-pulse'></div>
+              <div className='h-2 bg-slate-200 rounded w-4/5 animate-pulse'></div>
+            </div>
+            <div className='bg-white rounded-xl p-4 shadow-sm border'>
+              <div className='h-3 bg-slate-200 rounded mb-3 animate-pulse'></div>
+              <div className='h-7 bg-slate-300 rounded mb-2 animate-pulse'></div>
+              <div className='h-2 bg-slate-200 rounded w-3/5 animate-pulse'></div>
+            </div>
           </div>
         </div>
       </div>
